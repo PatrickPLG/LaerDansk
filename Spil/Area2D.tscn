@@ -1,0 +1,155 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Label.gd" type="Script" id=1]
+[ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://ScoreText.gd" type="Script" id=3]
+[ext_resource path="res://BackgroundTimer.gd" type="Script" id=4]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 0.792157, 0.227451, 0.745098 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.792157, 0.227451, 0.745098 )
+border_blend = true
+shadow_color = Color( 1, 0.792157, 0.227451, 0.745098 )
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.792157, 0.227451, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0.792157, 0.227451, 1 )
+border_blend = true
+corner_detail = 9
+shadow_color = Color( 1, 0.792157, 0.227451, 1 )
+shadow_size = 2
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 22
+font_data = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ord" type="Label" parent="Control/CenterContainer"]
+margin_left = 439.0
+margin_top = 264.0
+margin_right = 584.0
+margin_bottom = 335.0
+custom_fonts/font = SubResource( 5 )
+text = "TEST"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control"]
+margin_left = 14.0
+margin_top = 488.0
+margin_right = 1038.0
+margin_bottom = 576.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Control/CenterContainer2"]
+margin_left = 235.0
+margin_top = 24.0
+margin_right = 788.0
+margin_bottom = 64.0
+custom_constants/hseparation = 60
+columns = 3
+
+[node name="Navneord" type="Button" parent="Control/CenterContainer2/GridContainer"]
+margin_right = 118.0
+margin_bottom = 40.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "Navnord"
+
+[node name="Udsagnsord" type="Button" parent="Control/CenterContainer2/GridContainer"]
+margin_left = 178.0
+margin_right = 344.0
+margin_bottom = 40.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "Udsagnsord"
+
+[node name="Tillægsord" type="Button" parent="Control/CenterContainer2/GridContainer"]
+margin_left = 404.0
+margin_right = 553.0
+margin_bottom = 40.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "Tillægsord"
+
+[node name="CenterContainer3" type="CenterContainer" parent="Control"]
+margin_top = 34.0
+margin_right = 1024.0
+margin_bottom = 98.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreText" type="Label" parent="Control/CenterContainer3"]
+margin_left = 485.0
+margin_top = 18.0
+margin_right = 539.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 6 )
+text = "TEST"
+script = ExtResource( 3 )
+
+[node name="BackgroundTimer" type="Timer" parent="."]
+wait_time = 0.5
+script = ExtResource( 4 )
+[connection signal="forkert" from="Control/CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_forkert"]
+[connection signal="rigtig" from="Control/CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_rigtig"]
+[connection signal="pressed" from="Control/CenterContainer2/GridContainer/Navneord" to="Control/CenterContainer/Ord" method="_on_Navneord_pressed"]
+[connection signal="pressed" from="Control/CenterContainer2/GridContainer/Udsagnsord" to="Control/CenterContainer/Ord" method="_on_Udsagnsord_pressed"]
+[connection signal="pressed" from="Control/CenterContainer2/GridContainer/Tillægsord" to="Control/CenterContainer/Ord" method="_on_Tillgsord_pressed"]
+[connection signal="timeout" from="BackgroundTimer" to="Control/CenterContainer/Ord" method="_on_BackgroundTimer_timeout"]
