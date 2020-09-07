@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Spil"
-run/main_scene="res://Area2D.tscn"
+config/name="LærDansk - Udsagnsord, Tillægsord og Navneord"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
