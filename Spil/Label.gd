@@ -31,11 +31,12 @@ func _on_Udsagnsord_pressed():
 	if u_ord.has(activeword):
 		print("rigtig")
 		Score.score += 1
+		Score.fail_list_u.append(activeword)
 		emit_signal("rigtig")
 		_ready()
 	else:
 		print("Forkert")
-		Score.fail_list_u.append(activeword)
+		#Score.fail_list_u.append(activeword)
 		emit_signal("forkert")
 		_ready()
 
@@ -45,11 +46,12 @@ func _on_Tillgsord_pressed():
 	if t_ord.has(activeword):
 		print("rigtig")
 		Score.score += 1
+		Score.fail_list_t.append(activeword)
 		emit_signal("rigtig")
 		_ready()
 	else:
 		print("Forkert")
-		Score.fail_list_t.append(activeword)
+		#Score.fail_list_t.append(activeword)
 		emit_signal("forkert")
 		_ready()
 
@@ -59,11 +61,12 @@ func _on_Navneord_pressed():
 	if n_ord.has(activeword):
 		print("rigtig")
 		Score.score += 1
+		Score.fail_list_n.append(activeword)
 		emit_signal("rigtig")
 		_ready()
 	else:
 		print("Forkert")
-		Score.fail_list_n.append(activeword)
+		#Score.fail_list_n.append(activeword)
 		emit_signal("forkert")
 		_ready()
 

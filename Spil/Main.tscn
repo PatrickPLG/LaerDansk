@@ -6,7 +6,7 @@
 [ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://HoverStart.tres" type="StyleBox" id=5]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 40
 outline_color = Color( 0.239216, 0.643137, 0.372549, 1 )
 font_data = ExtResource( 4 )
@@ -45,7 +45,7 @@ margin_bottom = 198.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 5 )
 custom_styles/normal = ExtResource( 3 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "START"
 __meta__ = {
 "_edit_use_anchors_": false

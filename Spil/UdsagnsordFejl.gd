@@ -14,4 +14,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var totalfail_u = Score.fail_list_u.size()
-	set_text("Udsagnsord: " + str(totalfail_u) + " ud af " + str(Score.total_u) + " Fejl")
+	set_text("Udsagnsord: " + str(totalfail_u) + " ud af " + str(Score.total_u) + " rigtige")
