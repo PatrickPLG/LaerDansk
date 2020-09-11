@@ -87,24 +87,24 @@ __meta__ = {
 }
 
 [node name="CenterContainer2" type="CenterContainer" parent="Control"]
-margin_left = 14.0
+margin_left = 3.0
 margin_top = 488.0
-margin_right = 1038.0
+margin_right = 1027.0
 margin_bottom = 576.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GridContainer" type="GridContainer" parent="Control/CenterContainer2"]
-margin_left = 235.0
+margin_left = 227.0
 margin_top = 24.0
-margin_right = 788.0
+margin_right = 796.0
 margin_bottom = 64.0
 custom_constants/hseparation = 60
 columns = 3
 
 [node name="Navneord" type="Button" parent="Control/CenterContainer2/GridContainer"]
-margin_right = 118.0
+margin_right = 134.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = ExtResource( 5 )
@@ -114,11 +114,11 @@ custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "Navnord"
+text = "Navneord"
 
 [node name="Udsagnsord" type="Button" parent="Control/CenterContainer2/GridContainer"]
-margin_left = 178.0
-margin_right = 344.0
+margin_left = 194.0
+margin_right = 360.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = ExtResource( 5 )
@@ -131,8 +131,8 @@ custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "Udsagnsord"
 
 [node name="Tillægsord" type="Button" parent="Control/CenterContainer2/GridContainer"]
-margin_left = 404.0
-margin_right = 553.0
+margin_left = 420.0
+margin_right = 569.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = ExtResource( 5 )
@@ -153,6 +153,7 @@ __meta__ = {
 }
 
 [node name="ScoreText" type="Label" parent="Control/CenterContainer3"]
+visible = false
 margin_left = 485.0
 margin_top = 18.0
 margin_right = 539.0

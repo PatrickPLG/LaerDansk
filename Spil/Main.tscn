@@ -37,17 +37,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Start"]
-margin_left = 446.0
-margin_top = 146.0
-margin_right = 578.0
-margin_bottom = 198.0
+[node name="GridContainer" type="GridContainer" parent="Start"]
+margin_left = 404.0
+margin_top = 100.0
+margin_right = 620.0
+margin_bottom = 244.0
+custom_constants/vseparation = 40
+
+[node name="Ordklasserstart" type="Button" parent="Start/GridContainer"]
+margin_right = 216.0
+margin_bottom = 52.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 5 )
 custom_styles/normal = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
-text = "START"
+text = "Ordklasser"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Start/Button" to="." method="_on_Button_pressed"]
+
+[node name="Hanogsinstart" type="Button" parent="Start/GridContainer"]
+margin_top = 92.0
+margin_right = 216.0
+margin_bottom = 144.0
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = SubResource( 1 )
+text = "Hans og sin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Start/GridContainer/Ordklasserstart" to="." method="_on_Ordklasserstart_pressed"]
+[connection signal="pressed" from="Start/GridContainer/Hanogsinstart" to="." method="_on_Hanogsinstart_pressed"]

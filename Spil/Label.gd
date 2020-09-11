@@ -10,7 +10,7 @@ var u_ord = ["Er","Har","Kan","Bliver","Skal","Vil","Får","Siger","Kommer","Gå
 
 var activeword = ""
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	
 	randomize()
@@ -22,20 +22,20 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	set_text(activeword)
 
 
 func _on_Udsagnsord_pressed():
 	Score.total_u += 1
 	if u_ord.has(activeword):
-		print("rigtig")
+		#print("rigtig")
 		Score.score += 1
 		Score.fail_list_u.append(activeword)
 		emit_signal("rigtig")
 		_ready()
 	else:
-		print("Forkert")
+		#print("Forkert")
 		#Score.fail_list_u.append(activeword)
 		emit_signal("forkert")
 		_ready()
@@ -44,13 +44,13 @@ func _on_Udsagnsord_pressed():
 func _on_Tillgsord_pressed():
 	Score.total_t += 1
 	if t_ord.has(activeword):
-		print("rigtig")
+		#print("rigtig")
 		Score.score += 1
 		Score.fail_list_t.append(activeword)
 		emit_signal("rigtig")
 		_ready()
 	else:
-		print("Forkert")
+		#print("Forkert")
 		#Score.fail_list_t.append(activeword)
 		emit_signal("forkert")
 		_ready()
@@ -59,13 +59,13 @@ func _on_Tillgsord_pressed():
 func _on_Navneord_pressed():
 	Score.total_n += 1
 	if n_ord.has(activeword):
-		print("rigtig")
+		#print("rigtig")
 		Score.score += 1
 		Score.fail_list_n.append(activeword)
 		emit_signal("rigtig")
 		_ready()
 	else:
-		print("Forkert")
+		#print("Forkert")
 		#Score.fail_list_n.append(activeword)
 		emit_signal("forkert")
 		_ready()
@@ -76,4 +76,5 @@ func _on_BackgroundTimer_timeout():
 
 
 func _on_Frdig_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Ending.tscn")

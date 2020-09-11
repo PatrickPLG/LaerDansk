@@ -111,7 +111,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Start"]
+[node name="StartIgen" type="Button" parent="Start"]
 margin_left = 396.0
 margin_top = 18.0
 margin_right = 628.0
@@ -124,4 +124,4 @@ text = "START IGEN"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Start/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Start/StartIgen" to="." method="_on_StartIgen_pressed"]

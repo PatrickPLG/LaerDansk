@@ -1,0 +1,126 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://logo3.png" type="Texture" id=2]
+[ext_resource path="res://logo5.png" type="Texture" id=3]
+[ext_resource path="res://logo2.png" type="Texture" id=4]
+[ext_resource path="res://logo4.png" type="Texture" id=5]
+[ext_resource path="res://HoverStart.tres" type="StyleBox" id=6]
+[ext_resource path="res://HanFejl.gd" type="Script" id=7]
+[ext_resource path="res://SinFejl.gd" type="Script" id=8]
+[ext_resource path="res://Ending.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.239216, 0.643137, 0.372549, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.239216, 0.643137, 0.372549, 1 )
+border_blend = true
+shadow_color = Color( 0.239216, 0.643137, 0.372549, 1 )
+shadow_size = 2
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_color = Color( 0.239216, 0.643137, 0.372549, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+margin_top = 224.0
+margin_right = 1024.0
+margin_bottom = 512.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Control/CenterContainer"]
+margin_left = 473.0
+margin_top = 89.0
+margin_right = 550.0
+margin_bottom = 199.0
+
+[node name="HanFejl" type="Label" parent="Control/CenterContainer/GridContainer"]
+margin_right = 77.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+text = "test"
+script = ExtResource( 7 )
+
+[node name="SinFejl" type="Label" parent="Control/CenterContainer/GridContainer"]
+margin_top = 57.0
+margin_right = 77.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 1 )
+text = "test"
+script = ExtResource( 8 )
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control"]
+margin_left = -15.0
+margin_right = 1009.0
+margin_bottom = 232.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo3" type="Sprite" parent="Control/CenterContainer2"]
+visible = false
+position = Vector2( 534, 160 )
+texture = ExtResource( 2 )
+
+[node name="logo2" type="Sprite" parent="Control/CenterContainer2"]
+visible = false
+position = Vector2( 536, 176 )
+texture = ExtResource( 4 )
+
+[node name="logo4" type="Sprite" parent="Control/CenterContainer2"]
+visible = false
+position = Vector2( 527, 136 )
+texture = ExtResource( 5 )
+
+[node name="logo5" type="Sprite" parent="Control/CenterContainer2"]
+position = Vector2( 527, 136 )
+texture = ExtResource( 3 )
+
+[node name="Start" type="CenterContainer" parent="Control"]
+margin_top = 512.0
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartIgen" type="Button" parent="Control/Start"]
+margin_left = 396.0
+margin_top = 18.0
+margin_right = 628.0
+margin_bottom = 70.0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "START IGEN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/Start/StartIgen" to="Control" method="_on_StartIgen_pressed"]
