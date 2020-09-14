@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Label.gd" type="Script" id=1]
 [ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=2]
@@ -7,14 +7,19 @@
 [ext_resource path="res://Area2D.tres" type="StyleBox" id=5]
 [ext_resource path="res://HoverStart.tres" type="StyleBox" id=6]
 [ext_resource path="res://normalstart.tres" type="StyleBox" id=7]
+[ext_resource path="res://Blackboard.png" type="Texture" id=8]
+[ext_resource path="res://Baggrund_hvid.png" type="Texture" id=9]
+[ext_resource path="res://Berton-Roman-trial.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://teacher_scaled.png" type="Texture" id=11]
+[ext_resource path="res://Floor.png" type="Texture" id=12]
 
-[sub_resource type="ImageTexture" id=1]
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="DynamicFont" id=9]
+size = 27
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 60
-font_data = ExtResource( 2 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 1, 0.952941, 0.431373, 0.490196 )
@@ -50,35 +55,88 @@ font_data = ExtResource( 2 )
 size = 20
 font_data = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D"]
-
-[node name="Sprite" type="Sprite" parent="."]
-visible = false
-texture = SubResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource( 2 )
-
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Control"]
+[node name="TextureRect2" type="TextureRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Ord" type="Label" parent="Control/CenterContainer"]
-margin_left = 439.0
-margin_top = 264.0
-margin_right = 584.0
-margin_bottom = 335.0
+[node name="Floor" type="TextureRect" parent="."]
+margin_left = 1.0
+margin_top = 459.0
+margin_right = 1281.0
+margin_bottom = 719.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tavle" type="TextureRect" parent="."]
+margin_left = 250.0
+margin_top = 7.0
+margin_right = 506.0
+margin_bottom = 263.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lærer" type="TextureRect" parent="."]
+margin_left = 72.0
+margin_top = 52.0
+margin_right = 232.0
+margin_bottom = 292.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overskrift" type="Label" parent="."]
+margin_left = 340.0
+margin_top = 125.0
+margin_right = 683.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 9 )
+text = "Hvilken ordklasse er ordet?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Underline" type="Label" parent="."]
+margin_left = 340.0
+margin_top = 141.0
+margin_right = 683.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 9 )
+text = "----------------------------"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_top = -39.0
+margin_right = 1024.0
+margin_bottom = 561.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ord" type="Label" parent="CenterContainer"]
+margin_left = 427.0
+margin_top = 256.0
+margin_right = 596.0
+margin_bottom = 343.0
 custom_fonts/font = SubResource( 3 )
 text = "TEST"
 script = ExtResource( 1 )
@@ -86,16 +144,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer2" type="CenterContainer" parent="Control"]
+[node name="CenterContainer2" type="CenterContainer" parent="."]
 margin_left = 3.0
-margin_top = 488.0
+margin_top = 499.0
 margin_right = 1027.0
-margin_bottom = 576.0
+margin_bottom = 587.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="Control/CenterContainer2"]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer2"]
 margin_left = 227.0
 margin_top = 24.0
 margin_right = 796.0
@@ -103,7 +161,7 @@ margin_bottom = 64.0
 custom_constants/hseparation = 60
 columns = 3
 
-[node name="Navneord" type="Button" parent="Control/CenterContainer2/GridContainer"]
+[node name="Navneord" type="Button" parent="CenterContainer2/GridContainer"]
 margin_right = 134.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 4 )
@@ -116,7 +174,7 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "Navneord"
 
-[node name="Udsagnsord" type="Button" parent="Control/CenterContainer2/GridContainer"]
+[node name="Udsagnsord" type="Button" parent="CenterContainer2/GridContainer"]
 margin_left = 194.0
 margin_right = 360.0
 margin_bottom = 40.0
@@ -130,7 +188,7 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "Udsagnsord"
 
-[node name="Tillægsord" type="Button" parent="Control/CenterContainer2/GridContainer"]
+[node name="Tillægsord" type="Button" parent="CenterContainer2/GridContainer"]
 margin_left = 420.0
 margin_right = 569.0
 margin_bottom = 40.0
@@ -144,7 +202,7 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "Tillægsord"
 
-[node name="CenterContainer3" type="CenterContainer" parent="Control"]
+[node name="CenterContainer3" type="CenterContainer" parent="."]
 margin_top = 34.0
 margin_right = 1024.0
 margin_bottom = 98.0
@@ -152,7 +210,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreText" type="Label" parent="Control/CenterContainer3"]
+[node name="ScoreText" type="Label" parent="CenterContainer3"]
 visible = false
 margin_left = 485.0
 margin_top = 18.0
@@ -162,7 +220,7 @@ custom_fonts/font = SubResource( 7 )
 text = "TEST"
 script = ExtResource( 3 )
 
-[node name="Færdig" type="Button" parent="Control"]
+[node name="Færdig" type="Button" parent="."]
 margin_left = 904.0
 margin_top = 48.0
 margin_right = 992.0
@@ -179,10 +237,10 @@ __meta__ = {
 [node name="BackgroundTimer" type="Timer" parent="."]
 wait_time = 0.5
 script = ExtResource( 4 )
-[connection signal="forkert" from="Control/CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_forkert"]
-[connection signal="rigtig" from="Control/CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_rigtig"]
-[connection signal="pressed" from="Control/CenterContainer2/GridContainer/Navneord" to="Control/CenterContainer/Ord" method="_on_Navneord_pressed"]
-[connection signal="pressed" from="Control/CenterContainer2/GridContainer/Udsagnsord" to="Control/CenterContainer/Ord" method="_on_Udsagnsord_pressed"]
-[connection signal="pressed" from="Control/CenterContainer2/GridContainer/Tillægsord" to="Control/CenterContainer/Ord" method="_on_Tillgsord_pressed"]
-[connection signal="pressed" from="Control/Færdig" to="Control/CenterContainer/Ord" method="_on_Frdig_pressed"]
-[connection signal="timeout" from="BackgroundTimer" to="Control/CenterContainer/Ord" method="_on_BackgroundTimer_timeout"]
+[connection signal="forkert" from="CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_forkert"]
+[connection signal="rigtig" from="CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_rigtig"]
+[connection signal="pressed" from="CenterContainer2/GridContainer/Navneord" to="CenterContainer/Ord" method="_on_Navneord_pressed"]
+[connection signal="pressed" from="CenterContainer2/GridContainer/Udsagnsord" to="CenterContainer/Ord" method="_on_Udsagnsord_pressed"]
+[connection signal="pressed" from="CenterContainer2/GridContainer/Tillægsord" to="CenterContainer/Ord" method="_on_Tillgsord_pressed"]
+[connection signal="pressed" from="Færdig" to="CenterContainer/Ord" method="_on_Frdig_pressed"]
+[connection signal="timeout" from="BackgroundTimer" to="CenterContainer/Ord" method="_on_BackgroundTimer_timeout"]

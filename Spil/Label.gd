@@ -73,6 +73,7 @@ func _on_Navneord_pressed():
 
 func _on_BackgroundTimer_timeout():
 	VisualServer.set_default_clear_color(Color(0.27,0.27,0.27,1))
+	get_node("../../TextureRect2").texture = load("res://Baggrund_hvid.png")
 
 
 func _on_Frdig_pressed():

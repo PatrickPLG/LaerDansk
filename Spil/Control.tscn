@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HoverStart.tres" type="StyleBox" id=2]
@@ -6,12 +6,14 @@
 [ext_resource path="res://normalstart.tres" type="StyleBox" id=4]
 [ext_resource path="res://ScoreText.gd" type="Script" id=5]
 [ext_resource path="res://Label.gd" type="Script" id=6]
+[ext_resource path="res://Berton-Roman-trial.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Blackboard.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 60
-font_data = ExtResource( 1 )
+font_data = ExtResource( 7 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0.952941, 0.431373, 0.490196 )
 border_width_left = 2
 border_width_top = 2
@@ -22,7 +24,7 @@ border_blend = true
 shadow_color = Color( 1, 0.952941, 0.431373, 0.490196 )
 shadow_size = 2
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 1, 0.952941, 0.431373, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -33,15 +35,15 @@ border_blend = true
 shadow_color = Color( 1, 0.952941, 0.431373, 1 )
 shadow_size = 2
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 30
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 size = 22
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=6]
 size = 20
 font_data = ExtResource( 1 )
 
@@ -52,19 +54,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 261.621
+margin_top = 63.1413
+margin_right = 517.621
+margin_bottom = 319.141
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 1024.0
+margin_left = 2.72076
+margin_right = 1026.72
 margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Ord" type="Label" parent="CenterContainer"]
-margin_left = 439.0
-margin_top = 264.0
-margin_right = 584.0
-margin_bottom = 335.0
-custom_fonts/font = SubResource( 3 )
+margin_left = 427.0
+margin_top = 256.0
+margin_right = 596.0
+margin_bottom = 343.0
+custom_fonts/font = SubResource( 1 )
 text = "TEST"
 script = ExtResource( 6 )
 __meta__ = {
@@ -91,10 +105,10 @@ columns = 3
 [node name="Navneord" type="Button" parent="CenterContainer2/GridContainer"]
 margin_right = 134.0
 margin_bottom = 40.0
-custom_styles/hover = SubResource( 4 )
+custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -105,10 +119,10 @@ text = "Navneord"
 margin_left = 194.0
 margin_right = 360.0
 margin_bottom = 40.0
-custom_styles/hover = SubResource( 4 )
+custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -119,10 +133,10 @@ text = "Udsagnsord"
 margin_left = 420.0
 margin_right = 569.0
 margin_bottom = 40.0
-custom_styles/hover = SubResource( 4 )
+custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -143,7 +157,7 @@ margin_left = 485.0
 margin_top = 18.0
 margin_right = 539.0
 margin_bottom = 45.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "TEST"
 script = ExtResource( 5 )
 
@@ -155,7 +169,7 @@ margin_bottom = 78.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 4 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "FÆRDIG"
 __meta__ = {
 "_edit_use_anchors_": false
