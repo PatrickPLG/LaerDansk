@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://speechbubble3.png" type="Texture" id=1]
+[ext_resource path="res://Checkmarker Wrong0.png" type="Texture" id=2]
+
+[node name="Wrong" type="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="speechbubble3" type="Sprite" parent="."]
+position = Vector2( 104, 248 )
+rotation = 3.14159
+texture = ExtResource( 1 )
+flip_v = true
+
+[node name="Checkmarker Wrong0" type="Sprite" parent="."]
+position = Vector2( 97, 194 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )

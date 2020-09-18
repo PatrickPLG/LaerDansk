@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://faillist_n.gd" type="Script" id=1]
 [ext_resource path="res://UdsagnsordFejl.gd" type="Script" id=2]
@@ -6,23 +6,19 @@
 [ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://HoverStart.tres" type="StyleBox" id=5]
 [ext_resource path="res://Ending.gd" type="Script" id=6]
-[ext_resource path="res://logo5.png" type="Texture" id=7]
-[ext_resource path="res://logo3.png" type="Texture" id=8]
-[ext_resource path="res://logo2.png" type="Texture" id=9]
-[ext_resource path="res://logo4.png" type="Texture" id=10]
 [ext_resource path="res://Blackboard.png" type="Texture" id=11]
 [ext_resource path="res://Berton-Roman-trial.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Filmcryptic.ttf" type="DynamicFontData" id=13]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 60
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 45
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.239216, 0.643137, 0.372549, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -33,7 +29,7 @@ border_blend = true
 shadow_color = Color( 0.239216, 0.643137, 0.372549, 1 )
 shadow_size = 2
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 40
 outline_color = Color( 0.239216, 0.643137, 0.372549, 1 )
 font_data = ExtResource( 4 )
@@ -46,28 +42,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Blackboard" type="Sprite" parent="."]
+[node name="EndingGrafisk" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Blackboard" type="Sprite" parent="EndingGrafisk"]
 position = Vector2( 512, 348 )
 scale = Vector2( 4.25, 3.90625 )
 texture = ExtResource( 11 )
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="EndingGrafisk"]
 margin_left = 365.0
 margin_top = 100.0
 margin_right = 658.0
 margin_bottom = 187.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Resultater"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="EndingGrafisk"]
 margin_left = 323.0
 margin_top = 141.0
 margin_right = 701.0
 margin_bottom = 228.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "--------------"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -90,7 +93,7 @@ margin_bottom = 217.0
 [node name="NavneordFejl" type="Label" parent="CenterContainer/GridContainer"]
 margin_right = 73.0
 margin_bottom = 46.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "test"
 script = ExtResource( 1 )
 
@@ -98,7 +101,7 @@ script = ExtResource( 1 )
 margin_top = 50.0
 margin_right = 73.0
 margin_bottom = 96.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "test"
 script = ExtResource( 2 )
 
@@ -106,37 +109,9 @@ script = ExtResource( 2 )
 margin_top = 100.0
 margin_right = 73.0
 margin_bottom = 146.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "test"
 script = ExtResource( 3 )
-
-[node name="CenterContainer2" type="CenterContainer" parent="."]
-visible = false
-margin_left = -15.0
-margin_right = 1009.0
-margin_bottom = 232.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="logo3" type="Sprite" parent="CenterContainer2"]
-visible = false
-position = Vector2( 534, 160 )
-texture = ExtResource( 8 )
-
-[node name="logo2" type="Sprite" parent="CenterContainer2"]
-visible = false
-position = Vector2( 536, 176 )
-texture = ExtResource( 9 )
-
-[node name="logo4" type="Sprite" parent="CenterContainer2"]
-visible = false
-position = Vector2( 527, 136 )
-texture = ExtResource( 10 )
-
-[node name="logo5" type="Sprite" parent="CenterContainer2"]
-position = Vector2( 527, 136 )
-texture = ExtResource( 7 )
 
 [node name="Start" type="CenterContainer" parent="."]
 margin_top = 460.0
@@ -153,8 +128,8 @@ margin_right = 628.0
 margin_bottom = 70.0
 custom_styles/hover = ExtResource( 5 )
 custom_styles/pressed = ExtResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "START IGEN"
 __meta__ = {
 "_edit_use_anchors_": false

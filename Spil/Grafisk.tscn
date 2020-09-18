@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Baggrund_hvid.png" type="Texture" id=1]
+[ext_resource path="res://Floor.png" type="Texture" id=2]
+[ext_resource path="res://Blackboard.png" type="Texture" id=3]
+[ext_resource path="res://Berton-Roman-trial.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://teacher_scaled.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+font_data = ExtResource( 4 )
+
+[node name="Grafisk" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="TextureRect" parent="."]
+margin_left = 1.0
+margin_top = 459.0
+margin_right = 1281.0
+margin_bottom = 719.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tavle" type="TextureRect" parent="."]
+margin_left = 250.0
+margin_top = 7.0
+margin_right = 506.0
+margin_bottom = 263.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lærer" type="TextureRect" parent="."]
+margin_left = 72.0
+margin_top = 52.0
+margin_right = 232.0
+margin_bottom = 292.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overskrift" type="Label" parent="."]
+margin_left = 340.0
+margin_top = 125.0
+margin_right = 683.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 1 )
+text = "Hvilken ordklasse er ordet?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Underline" type="Label" parent="."]
+margin_left = 340.0
+margin_top = 141.0
+margin_right = 683.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 1 )
+text = "----------------------------"
+__meta__ = {
+"_edit_use_anchors_": false
+}

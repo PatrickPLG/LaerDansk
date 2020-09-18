@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HoverStart.tres" type="StyleBox" id=2]
@@ -6,10 +6,22 @@
 [ext_resource path="res://normalstart.tres" type="StyleBox" id=4]
 [ext_resource path="res://Ord_han_sin.gd" type="Script" id=5]
 [ext_resource path="res://BackgroundTimer2.gd" type="Script" id=6]
+[ext_resource path="res://Baggrund_hvid.png" type="Texture" id=7]
+[ext_resource path="res://Floor.png" type="Texture" id=8]
+[ext_resource path="res://Blackboard.png" type="Texture" id=9]
+[ext_resource path="res://Berton-Roman-trial.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://teacher_scaled.png" type="Texture" id=11]
+[ext_resource path="res://Right checkmarker0.png" type="Texture" id=12]
+[ext_resource path="res://speechbubble3.png" type="Texture" id=13]
+[ext_resource path="res://Checkmarker Wrong0.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=7]
+size = 27
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
-font_data = ExtResource( 1 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 0.952941, 0.431373, 0.490196 )
@@ -59,18 +71,88 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Grafisk" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Grafisk"]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="TextureRect" parent="Control/Grafisk"]
+margin_left = 1.0
+margin_top = 459.0
+margin_right = 1281.0
+margin_bottom = 719.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tavle" type="TextureRect" parent="Control/Grafisk"]
+margin_left = 69.0
+margin_top = 7.0
+margin_right = 325.0
+margin_bottom = 263.0
+rect_scale = Vector2( 3.5, 2 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lærer" type="TextureRect" parent="Control/Grafisk"]
+margin_left = -73.0
+margin_top = 52.0
+margin_right = 87.0
+margin_bottom = 292.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Overskrift" type="Label" parent="Control/Grafisk"]
+margin_left = 340.0
+margin_top = 125.0
+margin_right = 683.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 7 )
+text = "Hvilken ordklasse er ordet?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Underline" type="Label" parent="Control/Grafisk"]
+margin_left = 340.0
+margin_top = 141.0
+margin_right = 683.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 7 )
+text = "----------------------------"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
+margin_top = -41.0
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 559.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Ord_han_sin" type="Label" parent="Control/CenterContainer"]
-margin_left = 475.0
-margin_top = 282.0
-margin_right = 548.0
-margin_bottom = 318.0
+margin_left = 470.0
+margin_top = 278.0
+margin_right = 553.0
+margin_bottom = 322.0
 custom_fonts/font = SubResource( 1 )
 text = "TEST"
 script = ExtResource( 5 )
@@ -156,6 +238,40 @@ __meta__ = {
 [node name="BackgroundTimer2" type="Timer" parent="Control"]
 wait_time = 0.5
 script = ExtResource( 6 )
+
+[node name="Right" type="Control" parent="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="speechbubble3" type="Sprite" parent="Control/Right"]
+position = Vector2( 206, 243 )
+texture = ExtResource( 13 )
+
+[node name="Right checkmarker0" type="Sprite" parent="Control/Right"]
+position = Vector2( 219, 206 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 12 )
+
+[node name="Wrong" type="Control" parent="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="speechbubble3" type="Sprite" parent="Control/Wrong"]
+position = Vector2( 206, 243 )
+texture = ExtResource( 13 )
+
+[node name="Checkmarker Wrong0" type="Sprite" parent="Control/Wrong"]
+position = Vector2( 225, 189 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 14 )
 [connection signal="forkert2" from="Control/CenterContainer/Ord_han_sin" to="Control/BackgroundTimer2" method="_on_Ord_han_sin_forkert2"]
 [connection signal="rigtig2" from="Control/CenterContainer/Ord_han_sin" to="Control/BackgroundTimer2" method="_on_Ord_han_sin_rigtig2"]
 [connection signal="pressed" from="Control/CenterContainer2/GridContainer/Han" to="Control/CenterContainer/Ord_han_sin" method="_on_Han_pressed"]

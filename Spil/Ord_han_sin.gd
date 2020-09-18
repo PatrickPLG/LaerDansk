@@ -4,8 +4,10 @@ extends Label
 signal rigtig2
 signal forkert2
 
-var hanord = ["Han spurgte om han måtte låne __ tandbørste"]
-var sinord = ["Lars blev glad for at se __ far igen", "Henrik er i fuld gang med __ udannelse", "Han har altid levet lidt i __ egen verden", "Han havde ofte rådet Maria til at rejse et sted hen med sin familie", "Han kunne ikke engang betro sig til __ bedste ven."]
+var hanord = ["Han spurgte om han måtte låne __ tandbørste", "Jacob lånte _ bil", "_ hus var var flot", "Han stjal __ telefon", "__ lærer var god", "Mekanikeren fiksede __ bil", "Peter syntes at __ kollega var rar", "__ mor havde altid travlt", "Frederik sidder på __ plads", "Ole passer __ barn", "Inger samlede __ ting", "De brugte alle __ penge"]
+var sinord = ["Lars blev glad for at se __ far igen", "Henrik er i fuld gang med __ uddannelse", "Han har altid levet lidt i __ egen verden", "Han kunne ikke engang betro sig til __ bedste ven.", "Jensen kysser _ kone", "Børge havde __ bukser på", "Han tog __ hat", "Han gik __ vej", "Han snakkede med __ ven", "Peters var sammen __ familie", "Søren elsker __ fiskestang"]
+
+# "Han havde ofte rådet Maria til at rejse et sted hen med __ familie",
 
 var activeword = ""
 
@@ -55,3 +57,6 @@ func _on_Frdig_pressed():
 
 func _on_BackgroundTimer2_timeout():
 	VisualServer.set_default_clear_color(Color(0.27,0.27,0.27,1))
+	get_node("../../Grafisk/TextureRect2").texture = load("res://Baggrund_hvid.png")
+	$"../../Wrong".hide()
+	$"../../Right".hide()

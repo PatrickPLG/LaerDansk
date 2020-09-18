@@ -1,17 +1,20 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Label.gd" type="Script" id=1]
 [ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://ScoreText.gd" type="Script" id=3]
 [ext_resource path="res://BackgroundTimer.gd" type="Script" id=4]
 [ext_resource path="res://Area2D.tres" type="StyleBox" id=5]
-[ext_resource path="res://HoverStart.tres" type="StyleBox" id=6]
-[ext_resource path="res://normalstart.tres" type="StyleBox" id=7]
+[ext_resource path="res://SpjQnCK_7x.png" type="Texture" id=6]
+[ext_resource path="res://Opening door0.png" type="Texture" id=7]
 [ext_resource path="res://Blackboard.png" type="Texture" id=8]
 [ext_resource path="res://Baggrund_hvid.png" type="Texture" id=9]
 [ext_resource path="res://Berton-Roman-trial.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://teacher_scaled.png" type="Texture" id=11]
 [ext_resource path="res://Floor.png" type="Texture" id=12]
+[ext_resource path="res://Checkmarker Wrong0.png" type="Texture" id=13]
+[ext_resource path="res://Right checkmarker0.png" type="Texture" id=14]
+[ext_resource path="res://speechbubble3.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 27
@@ -51,9 +54,21 @@ font_data = ExtResource( 2 )
 size = 22
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0, 0, 0 )
+
 [sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 76, 154 )
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -62,15 +77,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="Grafisk" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Grafisk"]
+margin_right = 1280.0
+margin_bottom = 720.0
 texture = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Floor" type="TextureRect" parent="."]
+[node name="Floor" type="TextureRect" parent="Grafisk"]
 margin_left = 1.0
 margin_top = 459.0
 margin_right = 1281.0
@@ -80,7 +102,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Tavle" type="TextureRect" parent="."]
+[node name="Tavle" type="TextureRect" parent="Grafisk"]
 margin_left = 250.0
 margin_top = 7.0
 margin_right = 506.0
@@ -91,7 +113,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Lærer" type="TextureRect" parent="."]
+[node name="Lærer" type="TextureRect" parent="Grafisk"]
 margin_left = 72.0
 margin_top = 52.0
 margin_right = 232.0
@@ -102,7 +124,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Overskrift" type="Label" parent="."]
+[node name="Overskrift" type="Label" parent="Grafisk"]
 margin_left = 340.0
 margin_top = 125.0
 margin_right = 683.0
@@ -113,7 +135,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Underline" type="Label" parent="."]
+[node name="Underline" type="Label" parent="Grafisk"]
 margin_left = 340.0
 margin_top = 141.0
 margin_right = 683.0
@@ -220,27 +242,96 @@ custom_fonts/font = SubResource( 6 )
 text = "TEST"
 script = ExtResource( 3 )
 
-[node name="Færdig" type="Button" parent="."]
-margin_left = 904.0
-margin_top = 48.0
-margin_right = 992.0
-margin_bottom = 78.0
-custom_styles/hover = ExtResource( 6 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/normal = ExtResource( 7 )
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Færdig" type="Button" parent="Area2D"]
+margin_left = 835.0
+margin_top = 142.0
+margin_right = 984.0
+margin_bottom = 456.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 custom_fonts/font = SubResource( 7 )
-text = "FÆRDIG"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 909, 298 )
+shape = SubResource( 11 )
+
 [node name="BackgroundTimer" type="Timer" parent="."]
 wait_time = 0.5
 script = ExtResource( 4 )
+
+[node name="Door" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Door" type="Sprite" parent="Door"]
+position = Vector2( 915, 269 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Door2" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Door2" type="Sprite" parent="Door2"]
+position = Vector2( 1192, 98 )
+scale = Vector2( 2, 1.7 )
+texture = ExtResource( 7 )
+
+[node name="Right" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="speechbubble3" type="Sprite" parent="Right"]
+position = Vector2( 104, 248 )
+rotation = 3.14159
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="Right checkmarker0" type="Sprite" parent="Right"]
+position = Vector2( 86, 209 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 14 )
+
+[node name="Wrong" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="speechbubble3" type="Sprite" parent="Wrong"]
+position = Vector2( 104, 248 )
+rotation = 3.14159
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="Checkmarker Wrong0" type="Sprite" parent="Wrong"]
+position = Vector2( 97, 194 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 13 )
 [connection signal="forkert" from="CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_forkert"]
 [connection signal="rigtig" from="CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_rigtig"]
 [connection signal="pressed" from="CenterContainer2/GridContainer/Navneord" to="CenterContainer/Ord" method="_on_Navneord_pressed"]
 [connection signal="pressed" from="CenterContainer2/GridContainer/Udsagnsord" to="CenterContainer/Ord" method="_on_Udsagnsord_pressed"]
 [connection signal="pressed" from="CenterContainer2/GridContainer/Tillægsord" to="CenterContainer/Ord" method="_on_Tillgsord_pressed"]
-[connection signal="pressed" from="Færdig" to="CenterContainer/Ord" method="_on_Frdig_pressed"]
+[connection signal="mouse_entered" from="Area2D" to="CenterContainer/Ord" method="_on_Area2D_mouse_entered"]
+[connection signal="pressed" from="Area2D/Færdig" to="CenterContainer/Ord" method="_on_Frdig_pressed"]
 [connection signal="timeout" from="BackgroundTimer" to="CenterContainer/Ord" method="_on_BackgroundTimer_timeout"]
