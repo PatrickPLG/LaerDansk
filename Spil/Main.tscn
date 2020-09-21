@@ -1,29 +1,29 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://logo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://Lodret Blackboard0.png" type="Texture" id=3]
 [ext_resource path="res://Roboto-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Berton-Roman-trial.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Help.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Baggrund_hvid.png" type="Texture" id=7]
 [ext_resource path="res://Floor.png" type="Texture" id=8]
 [ext_resource path="res://Bookshelf0.png" type="Texture" id=9]
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.172549 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0, 0, 0, 0 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 40
 outline_color = Color( 0.239216, 0.643137, 0.372549, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -36,25 +36,14 @@ font_data = ExtResource( 5 )
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 5 )
 
-[node name="Control" type="Control"]
+[node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-margin_right = 1024.0
-margin_bottom = 600.0
-color = Color( 0.266667, 0.266667, 0.266667, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="Floor" type="Sprite" parent="."]
 position = Vector2( 583.281, 645.021 )
@@ -67,6 +56,7 @@ texture = ExtResource( 7 )
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -82,10 +72,10 @@ margin_top = 386.0
 margin_right = 649.0
 margin_bottom = 438.0
 rect_scale = Vector2( 0.95, 0.5 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -96,10 +86,10 @@ margin_top = 357.44
 margin_right = 650.373
 margin_bottom = 409.44
 rect_scale = Vector2( 0.95, 0.5 )
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,5 +136,9 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Help" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, 64 )
+scale = Vector2( 2, 2 )
 [connection signal="pressed" from="Ordklasserstart" to="." method="_on_Ordklasserstart_pressed"]
 [connection signal="pressed" from="Hanogsinstart" to="." method="_on_Hanogsinstart_pressed"]
