@@ -50,11 +50,6 @@ func _on_Sin_pressed():
 		_ready()
 
 
-func _on_Frdig_pressed():
-# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Ending2.tscn")
-
-
 func _on_BackgroundTimer2_timeout():
 	VisualServer.set_default_clear_color(Color(0.27,0.27,0.27,1))
 	get_node("../../Grafisk/TextureRect2").texture = load("res://Baggrund_hvid.png")

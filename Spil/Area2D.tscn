@@ -166,16 +166,16 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer2"]
-margin_left = 227.0
+margin_left = 31.0
 margin_top = 24.0
-margin_right = 796.0
+margin_right = 993.0
 margin_bottom = 64.0
 mouse_filter = 2
 custom_constants/hseparation = 60
 columns = 3
 
 [node name="Navneord" type="Button" parent="CenterContainer2/GridContainer"]
-margin_right = 134.0
+margin_right = 288.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = ExtResource( 5 )
@@ -185,11 +185,11 @@ custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "Navneord"
+text = "Substantiv/Navneord"
 
 [node name="Udsagnsord" type="Button" parent="CenterContainer2/GridContainer"]
-margin_left = 194.0
-margin_right = 360.0
+margin_left = 348.0
+margin_right = 632.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = ExtResource( 5 )
@@ -199,11 +199,11 @@ custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "Udsagnsord"
+text = "Verbum/Udsagnsord"
 
 [node name="Tillægsord" type="Button" parent="CenterContainer2/GridContainer"]
-margin_left = 420.0
-margin_right = 569.0
+margin_left = 692.0
+margin_right = 962.0
 margin_bottom = 40.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = ExtResource( 5 )
@@ -213,7 +213,7 @@ custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "Tillægsord"
+text = "Adjektiv/Tillægsord"
 
 [node name="Door" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 272 )
@@ -239,7 +239,6 @@ text = "TEST"
 script = ExtResource( 3 )
 
 [node name="BackgroundTimer" type="Timer" parent="."]
-wait_time = 0.5
 script = ExtResource( 4 )
 
 [node name="Right" type="Control" parent="."]
