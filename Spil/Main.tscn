@@ -31,7 +31,7 @@ bg_color = Color( 0, 0, 0, 0 )
 size = 20
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 resource_name = "InformationTetx"
 length = 4.0
 loop = true
@@ -60,10 +60,10 @@ tracks/1/keys = {
 "values": [ Vector2( -235, -62 ), Vector2( -235, -57 ), Vector2( -235, -65.8 ), Vector2( -235, -62 ) ]
 }
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 font_data = ExtResource( 5 )
 
 [node name="Main" type="Control"]
@@ -97,10 +97,10 @@ scale = Vector2( 1.15, 1.1 )
 texture = ExtResource( 9 )
 
 [node name="Ordklasserstart" type="Button" parent="."]
-margin_left = 447.0
-margin_top = 386.0
-margin_right = 649.0
-margin_bottom = 438.0
+margin_left = 448.0
+margin_top = 385.0
+margin_right = 641.0
+margin_bottom = 437.0
 rect_scale = Vector2( 0.95, 0.5 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -111,10 +111,10 @@ __meta__ = {
 }
 
 [node name="Hanogsinstart" type="Button" parent="."]
-margin_left = 434.373
-margin_top = 357.44
-margin_right = 650.373
-margin_bottom = 409.44
+margin_left = 437.0
+margin_top = 358.0
+margin_right = 631.0
+margin_bottom = 410.0
 rect_scale = Vector2( 0.95, 0.5 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -142,7 +142,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lodret Blackboard0/Label"]
-anims/InformationTetx = SubResource( 9 )
+anims/InformationTetx = SubResource( 7 )
 script = ExtResource( 1 )
 
 [node name="Label2" type="Label" parent="Lodret Blackboard0"]
@@ -150,7 +150,7 @@ margin_left = -229.0
 margin_top = -43.0
 margin_right = -75.0
 margin_bottom = -19.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "---------------------"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -161,7 +161,7 @@ margin_left = -241.159
 margin_top = 24.0
 margin_right = -72.1594
 margin_bottom = 129.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Klik på en af bøgerne i
 midten under opgave-
 tavlen for at begynde
