@@ -1,0 +1,167 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://HelpPage.gd" type="Script" id=1]
+[ext_resource path="res://Baggrund_hvid.png" type="Texture" id=2]
+[ext_resource path="res://Lodret Blackboard0.png" type="Texture" id=3]
+
+[node name="HelpPage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Baggrund_hvid" type="Sprite" parent="."]
+position = Vector2( 552, 296 )
+texture = ExtResource( 2 )
+
+[node name="Lodret Blackboard0" type="Sprite" parent="."]
+position = Vector2( 681.5, 200 )
+scale = Vector2( 2.70898, 1.59375 )
+texture = ExtResource( 3 )
+
+[node name="Lodret Blackboard1" type="Sprite" parent="."]
+position = Vector2( 1131, 120 )
+scale = Vector2( 2.21875, 0.6875 )
+texture = ExtResource( 3 )
+
+[node name="Overskrift" type="Label" parent="."]
+visible = false
+margin_left = 32.0
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 78.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Underskrift" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 32.0
+margin_bottom = 110.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brødtekst" type="RichTextLabel" parent="."]
+margin_left = 32.0
+margin_top = 121.0
+margin_right = 512.0
+margin_bottom = 221.0
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Underskrift2" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 267.0
+margin_right = 32.0
+margin_bottom = 281.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brødtekst2" type="RichTextLabel" parent="."]
+margin_left = 32.0
+margin_top = 294.0
+margin_right = 512.0
+margin_bottom = 394.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Underskrift3" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 451.0
+margin_right = 32.0
+margin_bottom = 465.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brødtekst3" type="RichTextLabel" parent="."]
+margin_left = 32.0
+margin_top = 482.0
+margin_right = 512.0
+margin_bottom = 582.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeneralOverskrift" type="Label" parent="."]
+margin_left = 602.0
+margin_top = 83.0
+margin_right = 642.0
+margin_bottom = 97.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GeneraltTekst" type="RichTextLabel" parent="."]
+margin_left = 600.0
+margin_top = 114.0
+margin_right = 974.0
+margin_bottom = 434.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 426.0
+margin_top = 22.0
+margin_right = 597.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ordklasser" type="Button" parent="CenterContainer/HBoxContainer"]
+margin_right = 81.0
+margin_bottom = 20.0
+text = "Ordklasser"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Generalt" type="Button" parent="CenterContainer/HBoxContainer"]
+visible = false
+margin_left = 85.0
+margin_right = 152.0
+margin_bottom = 20.0
+text = "Generalt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HansSin" type="Button" parent="CenterContainer/HBoxContainer"]
+margin_left = 85.0
+margin_right = 171.0
+margin_bottom = 20.0
+text = "Hans og sin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 928.0
+margin_top = 23.0
+margin_right = 985.0
+margin_bottom = 43.0
+text = "Tilbage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CenterContainer/HBoxContainer/Ordklasser" to="." method="_on_Ordklasser_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/Generalt" to="." method="_on_Generalt_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/HansSin" to="." method="_on_HansSin_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
