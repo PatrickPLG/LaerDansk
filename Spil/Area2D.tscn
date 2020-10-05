@@ -283,6 +283,7 @@ texture = ExtResource( 13 )
 position = Vector2( 64, 64 )
 scale = Vector2( 2, 2 )
 [connection signal="forkert" from="CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_forkert"]
+[connection signal="forkert" from="CenterContainer/Ord" to="CenterContainer/Ord" method="_on_Ord_forkert"]
 [connection signal="rigtig" from="CenterContainer/Ord" to="BackgroundTimer" method="_on_Ord_rigtig"]
 [connection signal="pressed" from="CenterContainer2/GridContainer/Navneord" to="CenterContainer/Ord" method="_on_Navneord_pressed"]
 [connection signal="pressed" from="CenterContainer2/GridContainer/Udsagnsord" to="CenterContainer/Ord" method="_on_Udsagnsord_pressed"]

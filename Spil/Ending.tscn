@@ -10,7 +10,7 @@
 [ext_resource path="res://Berton-Roman-trial.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Filmcryptic.ttf" type="DynamicFontData" id=13]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 12 )
 
@@ -59,7 +59,7 @@ margin_left = 365.0
 margin_top = 100.0
 margin_right = 658.0
 margin_bottom = 187.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "Resultater"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -70,7 +70,7 @@ margin_left = 323.0
 margin_top = 141.0
 margin_right = 701.0
 margin_bottom = 228.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "--------------"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -264,6 +264,7 @@ scale = Vector2( 2, 2 )
 position = Vector2( 964, 313 )
 scale = Vector2( 0.4, 0.4 )
 [connection signal="forkert2" from="CenterContainer/Ord_han_sin" to="BackgroundTimer2" method="_on_Ord_han_sin_forkert2"]
+[connection signal="forkert2" from="CenterContainer/Ord_han_sin" to="CenterContainer/Ord_han_sin" method="_on_Ord_han_sin_forkert2"]
 [connection signal="rigtig2" from="CenterContainer/Ord_han_sin" to="BackgroundTimer2" method="_on_Ord_han_sin_rigtig2"]
 [connection signal="pressed" from="CenterContainer2/GridContainer/Han" to="CenterContainer/Ord_han_sin" method="_on_Han_pressed"]
 [connection signal="pressed" from="CenterContainer2/GridContainer/Sin" to="CenterContainer/Ord_han_sin" method="_on_Sin_pressed"]

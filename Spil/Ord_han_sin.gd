@@ -27,9 +27,8 @@ func _process(_delta):
 	set_text(activeword)
 
 func _on_Han_pressed():
-	Score.total_han += 1
 	if hanord.has(activeword):
-		Score.score += 1
+		Score.total_han += 1
 		Score.fail_list_han.append(activeword)
 		emit_signal("rigtig2")
 		_ready()
@@ -39,9 +38,8 @@ func _on_Han_pressed():
 
 
 func _on_Sin_pressed():
-	Score.total_sin += 1
 	if sinord.has(activeword):
-		Score.score += 1
+		Score.total_sin += 1
 		Score.fail_list_sin.append(activeword)
 		emit_signal("rigtig2")
 		_ready()
@@ -55,3 +53,10 @@ func _on_BackgroundTimer2_timeout():
 	get_node("../../Grafisk/TextureRect2").texture = load("res://Baggrund_hvid.png")
 	$"../../Wrong".hide()
 	$"../../Right".hide()
+
+
+func _on_Ord_han_sin_forkert2():
+	if sinord.has(activeword):
+		Score.total_sin += 1
+	elif hanord.has(activeword):
+		Score.total_han += 1
