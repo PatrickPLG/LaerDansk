@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://AnimationPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Baggrund_hvid.png" type="Texture" id=7]
 [ext_resource path="res://Floor.png" type="Texture" id=8]
 [ext_resource path="res://Bookshelf0.png" type="Texture" id=9]
+[ext_resource path="res://sprite_bookshelf0.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.172549 )
@@ -92,15 +93,21 @@ __meta__ = {
 }
 
 [node name="Bookshelf0" type="Sprite" parent="CenterContainer2"]
+visible = false
 position = Vector2( 531.515, 312.208 )
 scale = Vector2( 1.15, 1.1 )
 texture = ExtResource( 9 )
 
+[node name="sprite_bookshelf0" type="Sprite" parent="CenterContainer2"]
+position = Vector2( 532.75, 312 )
+scale = Vector2( 1.12861, 1.09375 )
+texture = ExtResource( 10 )
+
 [node name="Ordklasserstart" type="Button" parent="."]
-margin_left = 448.0
-margin_top = 385.0
-margin_right = 641.0
-margin_bottom = 437.0
+margin_left = 376.0
+margin_top = 360.0
+margin_right = 721.0
+margin_bottom = 462.0
 rect_scale = Vector2( 0.95, 0.5 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -111,10 +118,10 @@ __meta__ = {
 }
 
 [node name="Hanogsinstart" type="Button" parent="."]
-margin_left = 437.0
-margin_top = 358.0
-margin_right = 631.0
-margin_bottom = 410.0
+margin_left = 360.0
+margin_top = 312.0
+margin_right = 705.0
+margin_bottom = 412.0
 rect_scale = Vector2( 0.95, 0.5 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
@@ -131,11 +138,11 @@ texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Lodret Blackboard0"]
 margin_left = -235.0
-margin_top = -64.8536
+margin_top = -62.0
 margin_right = -74.0
-margin_bottom = -35.8536
+margin_bottom = -33.0
 custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0.973059, 0.17144, 0.17144, 1 )
+custom_colors/font_color = Color( 0.956863, 0.27451, 0.27451, 1 )
 text = "INFORMATION"
 __meta__ = {
 "_edit_use_anchors_": false
